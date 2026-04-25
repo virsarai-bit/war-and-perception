@@ -626,9 +626,182 @@ footer {
   color: rgba(255,255,255,0.45);
   margin-bottom: 0.75rem;
 }
-.footer-legal {
-  font-size: 0.73rem;
-  color: rgba(255,255,255,0.25);
+.footer-sub { margin-bottom: 0; }
+
+/* ============================================================
+   CONFLICT STRIP (hero)
+   ============================================================ */
+.conflict-strip {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+.conflict-strip-label {
+  color: rgba(255,255,255,0.18);
+  margin-right: 0.25rem;
+}
+.conflict-strip .dot { color: rgba(255,255,255,0.15); }
+
+/* ============================================================
+   SAID QUOTE — visual centerpiece
+   ============================================================ */
+.said-quote-wrap {
+  position: relative;
+  text-align: center;
+  padding: 3.5rem 2rem 3rem;
+  margin-bottom: 3rem;
+  background: var(--navy);
+  border-radius: 4px;
+}
+.said-openmark {
+  font-family: var(--serif);
+  font-size: 8rem;
+  line-height: 0.6;
+  color: var(--accent);
+  opacity: 0.35;
+  display: block;
+  margin-bottom: 1.5rem;
+  user-select: none;
+}
+.said-quote-text {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.92);
+  max-width: 800px;
+  margin: 0 auto 1.25rem;
+  font-weight: 400;
+}
+.said-attr {
+  font-size: 0.82rem;
+  color: var(--accent-lt);
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   MECHANISM GRID — 3-step argument visual
+   ============================================================ */
+.mechanism-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 3.5rem;
+}
+.mechanism-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.mechanism-num {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+.mechanism-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+.mechanism-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.mechanism-arrow {
+  font-size: 1.75rem;
+  color: var(--accent);
+  padding: 0 1rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   DRAFT / PLACEHOLDER MARKING
+   ============================================================ */
+.draft-block {
+  border-left: 3px dashed #D4860A;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+/* When nested inside video cards, no outer margin */
+.draft-block-inline {
+  border-left: none;
+  padding-left: 0;
+  margin: 0;
+  border-top: 2px dashed #D4860A;
+  padding-top: 0.75rem;
+}
+.draft-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #D4860A;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+  user-select: none;
+}
+
+/* ============================================================
+   LARGE PULL QUOTE VARIANT
+   ============================================================ */
+.pull-quote-lg {
+  margin: 2.5rem 0;
+  padding: 0;
+  border-left: none;
+  background: none;
+}
+.pull-quote-lg .draft-block {
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem 2rem;
+  background: var(--bg-alt);
+  margin: 0;
+}
+.pull-quote-lg blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+.pull-quote-lg cite {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: normal;
+  display: block;
+}
+/* stat-card cite styling */
+.stat-label cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  font-style: normal;
+  letter-spacing: 0.02em;
 }
 
 /* ============================================================
@@ -648,6 +821,20 @@ footer {
 
   .pull-quote { padding: 1.25rem; }
   .callout-box { padding: 1.25rem; }
+
+  /* Mechanism: stack vertically on mobile */
+  .mechanism-grid {
+    grid-template-columns: 1fr;
+  }
+  .mechanism-arrow {
+    transform: rotate(90deg);
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  /* Said quote */
+  .said-openmark { font-size: 5rem; }
+  .said-quote-wrap { padding: 2.5rem 1.25rem 2rem; }
 }
 
 @media (max-width: 480px) {
